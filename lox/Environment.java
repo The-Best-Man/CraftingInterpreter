@@ -20,7 +20,7 @@ class Environment
 
         Object get(Token name)
         {
-                if (values.containKey(name.lexeme))
+                if (values.containsKey(name.lexeme))
                 {
                         return values.get(name.lexeme);
                 }
