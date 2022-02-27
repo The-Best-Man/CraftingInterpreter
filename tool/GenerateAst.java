@@ -17,9 +17,10 @@ public class GenerateAst
 		String outputDir = args[0];
 		defineAst(outputDir, "Expr", Arrays.asList
 				(
-				 "Assin    : Token name, Expr value",
+				 "Assign    : Token name, Expr value",
                                  "Binary   : Expr left, Token operator, Expr right",
-				 "Grouping : Expr expression",
+				 "Call     : Expr callee, Token paren, List<Expr> arguments",
+                                 "Grouping : Expr expression",
                                  "Unary    : Token operator, Expr right",
 				 "Literal  : Object value",
 				 "Logical  : Expr left, Token operator, Expr right",
@@ -31,8 +32,11 @@ public class GenerateAst
                                  "Block      : List<Stmt> statements",
                                  "Class      : Token name, List<Stmt.Function> methods",
                                  "Expression : Expr expression", 
+                                 "Function   : Token name, List<Token> params, List<Stmt> body",
                                  "If         : Expr condition, Stmt thenBranch, Stmt elseBranch",
                                  "Print      : Expr expression",
+                                 "While      : Expr condition, Stmt body",
+                                 "Return     : Token keyword, Expr value",
                                  "Var        : Token name, Expr initializer"
                                 ));
 	}
@@ -105,7 +109,7 @@ public class GenerateAst
 		writer.println();
 		for (String field : fields)
 		{
-			writer.println("\tfinal " + field + ";");
+			writer.println("\t\tfinal " + field + ";");
 		}
 
 		writer.println("\t}\n");
