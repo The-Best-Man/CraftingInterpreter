@@ -1,4 +1,4 @@
-LSRCS := Expr.java Stmt.java Lox.java Token.java TokenType.java Parser.java Scanner.java Return.java Resolver.java LoxCallable.java LoxFunction.java RuntimeError.java Environment.java
+LSRCS := Expr.java Stmt.java Lox.java Token.java TokenType.java Parser.java Scanner.java Return.java Resolver.java LoxCallable.java LoxFunction.java RuntimeError.java Environment.java LoxClass.java LoxInstance.java
 TSRCS := GenerateAst.java
 
 TOOlDIR := ./tool
